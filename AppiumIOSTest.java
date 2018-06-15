@@ -1,36 +1,40 @@
 package test.java.iOSWifiToggling;
+//package io.appium.java_client.touch;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
-import org.aspectj.lang.annotation.After;
-import org.aspectj.lang.annotation.Before;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Test;
+//import org.testng.annotations.*;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.internal.TouchAction;
-import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.openqa.selenium.WebDriver;
+//import org.openqa.selenium.Point;
+//import org.openqa.selenium.interactions.internal.TouchAction;
+//import org.openqa.selenium.remote.RemoteWebDriver;
+//import org.openqa.selenium.support.ui.ExpectedConditions;
+//import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+//import io.appium.java_client.ios.*;
 import io.appium.java_client.ios.IOSDriver;
-import io.appium.java_client.ios.IOSElement;
+//import io.appium.java_client.ios.IOSElement;
+//import io.appium.java_client.touch.ActionOptions;
+import io.appium.java_client.touch.offset.*;
+import io.appium.java_client.TouchAction;
+
 
 
 public class AppiumIOSTest {
 	
 	
-	@SuppressWarnings("rawtypes")
 	private static AppiumDriver<MobileElement> driver;
 	
-	@SuppressWarnings("rawtypes")
-	@BeforeClass
+	@BeforeAll
 	public static void ixchariotLaunch() throws Exception {
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("platformName", "iOS");
@@ -43,53 +47,58 @@ public class AppiumIOSTest {
 		try {
 			driver = new IOSDriver<MobileElement>(new URL("http://0.0.0.0:4725/wd/hub"),cap);
 		}catch (MalformedURLException e) {
-			e.printStackaTrace();
+			e.printStackTrace();
 		}
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("Appium Session Started");
 	}
 
-	//@Test
-	/*public void testScript() throws Exception{
-		System.out.println("something happened");
-		driver.findElement(By.name("About")).click();
-		try {
-			Thread.sleep(100*1000);
-		}catch(InterruptedException e) {
-			System.out.println("oops");
-		}
-	}*/
-	
-	
-	int height = driver.findElementById("UIAWindow").getSize().getHeight();
-	int width = driver.findElementById("UIAWindow").getSize().getWidth();
-	@SuppressWarnings("rawtypes")
 	@Test
-	public void controlCenterSwipe() throws Exception{
-		//@SuppressWarnings("rawtypes")
-		/*int height = driver.findElementById("UIAWindow").getSize().getHeight();
-		int width = driver.findElementById("UIAWindow").getSize().getWidth();
-		int starty = (int) (height * 0.70);
-		int endy = (int) (height * 0.20);
-		int x = width / 2;
-		(new TouchAction(driver)).press(PointOption.point(x, starty)).moveTo(PointOption.point(x, endy)).release().perform();*/
+	public static void controlCenterSwipe() throws Exception{
 
+		System.out.println("Test Started");
 		//driver.findElement(By.name("About")).click();
+		
+		/*Dimension d = driver.manage().window().getSize();
+		int height = d.getHeight();
+		int width = d.getWidth();
+		System.out.println(height);
+		System.out.println(width);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		HashMap<String, Object> swipeObj = new HashMap<>();
-
-		swipeObj.put("fromY", 0);
-		swipeObj.put("fromX", 200);
-		swipeObj.put("toX", 200);
-		swipeObj.put("toY", 500);
-		swipeObj.put("duration", 1);
+		swipeObj.put("fromY", height);
+		swipeObj.put("fromX", width/2);
+		swipeObj.put("toX", width/2);
+		swipeObj.put("toY", -height);
+		swipeObj.put("duration", 0.5);
 		js.executeScript("mobile:dragFromToForDuration", swipeObj);
-
+		HashMap<String,Object> params = new HashMap<>();
+		params.put("direction", "up");
+		js.executeScript("mobile:swipe", params);
+		HashMap<String,Object> scrollParams = new HashMap<>();
+		scrollParams.put("direction","down");
+		js.executeScript("mobile:scroll", scrollParams);
+		TouchAction touchAction = new TouchAction(driver);
+		touchAction.press(new PointOption().withCoordinates(width/2, height)).moveTo(new PointOption().withCoordinates(width/2, -height)).release().perform();
+		//driver.getinstance().findElement(By.id("Wi-Fi"));*/
+		
+		
+		
+		/* if (driver.getInstance()findElement(By.id("WiFi")).isEnabled()){
+		 * 	click("WiFi", Attribute.NAME);
+		 * }
+		 * else {
+		 * 	click("WiFi", Attribute.NAME);
+		 * }
+		 * 
+		 * */
+		
+		//driver.tap(point(341, 630)).perform();
 		
 	}
 	
 
-	@AfterClass
+	@AfterAll
 	public static void tearDown() throws Exception{
 		try {
 			Thread.sleep(10*1000);

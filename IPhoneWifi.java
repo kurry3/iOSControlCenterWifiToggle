@@ -1,14 +1,16 @@
-package test.java.iOSWifiToggling;
-//package io.appium.java_client.touch;
+package test.java.IPhoneWifi;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 
 //import org.testng.annotations.*;
 import org.junit.jupiter.api.*;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
@@ -29,9 +31,9 @@ import io.appium.java_client.TouchAction;
 
 
 
-public class AppiumIOSTest {
-	
-	
+
+public class IPhoneWifi{
+
 	private static AppiumDriver<MobileElement> driver;
 	
 	@BeforeAll
@@ -52,14 +54,13 @@ public class AppiumIOSTest {
 		//driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		System.out.println("Appium Session Started");
 	}
-
-	@Test
-	public static void controlCenterSwipe() throws Exception{
-
-		System.out.println("Test Started");
-		//driver.findElement(By.name("About")).click();
+	
+    @Test
+    void myFirstTest() {
+		/*System.out.println("Test Started");
+		driver.findElement(By.name("About")).click();
 		
-		/*Dimension d = driver.manage().window().getSize();
+		Dimension d = driver.manage().window().getSize();
 		int height = d.getHeight();
 		int width = d.getWidth();
 		System.out.println(height);
@@ -74,14 +75,17 @@ public class AppiumIOSTest {
 		js.executeScript("mobile:dragFromToForDuration", swipeObj);
 		HashMap<String,Object> params = new HashMap<>();
 		params.put("direction", "up");
-		js.executeScript("mobile:swipe", params);
-		HashMap<String,Object> scrollParams = new HashMap<>();
-		scrollParams.put("direction","down");
-		js.executeScript("mobile:scroll", scrollParams);
-		TouchAction touchAction = new TouchAction(driver);
-		touchAction.press(new PointOption().withCoordinates(width/2, height)).moveTo(new PointOption().withCoordinates(width/2, -height)).release().perform();
-		//driver.getinstance().findElement(By.id("Wi-Fi"));*/
+		js.executeScript("mobile:swipe", params);*/
+		//HashMap<String,Object> scrollParams = new HashMap<>();
 		
+		
+		//scrollParams.put("direction","down");
+		//js.executeScript("mobile:scroll", scrollParams);
+		
+		
+		TouchAction touchAction = new TouchAction(driver);
+		//touchAction.press(new PointOption().withCoordinates(width/2, height)).moveTo(new PointOption().withCoordinates(width/2, -height)).release().perform();
+		//driver.getinstance().findElement(By.id("Wi-Fi"));
 		
 		
 		/* if (driver.getInstance()findElement(By.id("WiFi")).isEnabled()){
@@ -93,9 +97,18 @@ public class AppiumIOSTest {
 		 * 
 		 * */
 		
-		//driver.tap(point(341, 630)).perform();
+		touchAction.tap(PointOption.point(341, 630)).perform();
+		//driver.findElementByAccessibilityId("Wi-fi");
+		try {
+			Thread.sleep(5*1000);
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
 		
-	}
+		touchAction.tap(PointOption.point(70, 340)).perform();
+		
+    }
+    
 	
 
 	@AfterAll
@@ -107,8 +120,5 @@ public class AppiumIOSTest {
 		}
 		driver.quit();
 	}
+
 }
-
-	
-
-

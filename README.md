@@ -1,10 +1,10 @@
 # iPhoneToggle
 Environment: 
-- Appium: 6.0+
+- Appium: 6.0+ , Appium Desktop: 1.8+
 - Selenium: 3.12+
 - JUnit: 5.2+, Maven:4.0+
-- Eclipse: latest , Java: 6.0+
-- XCode: latest
+- Eclipse: 4.7+ , Java: 6.0+
+- XCode: 9.4+
 
 
 ## **Installing Appium + WebDriverAgent for real device testing**
@@ -34,9 +34,8 @@ Environment:
   - Right click project > Build Path > Configure Build Path > Add Library > Junit
   - Import pom.xml file 
       - will import Maven Dependencies necessary
-  - About IPhoneWifi.java file 
   - Appium Server: http://www.automationtestinghub.com/appium-desktop/
-  - How to Launch Appium Desktop Inspector
+  **- How to Launch Appium Desktop Inspector**
     1. Click the magnifying glass in the top right of Appium desktop
     2. Create a Custom Server
     3. Edit Desired Capabilities: 
@@ -52,10 +51,10 @@ Environment:
       ```
     4. Start Session
     
-  - How to Retrieve bundleId 
+  **- How to Retrieve bundleId **
      - Self-Made Application: https://pspdfkit.com/guides/ios/current/faq/finding-the-app-bundle-id/
      - App Store Application: https://offcornerdev.com/bundleid.html
-  - Create and Run Appium Test with Maven
+  **- Create and Run Appium Test with Maven**
       - https://stackoverflow.com/questions/24919159/how-to-create-in-eclipse-and-run-your-appium-test-on-the-ios-device-not-emulato
 
 

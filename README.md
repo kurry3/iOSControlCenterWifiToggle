@@ -8,8 +8,8 @@ Environment:
 
 
 ## **Installing Appium + WebDriverAgent for real device testing**
-**XCode WebDriverAgent**
-  - Appium Set Up: https://www.linkedin.com/pulse/appium-ver-171-setup-mac-os-sierra-ios-real-device-suraj-salunkhe
+### **XCode WebDriverAgent**
+  - Set Up: https://www.linkedin.com/pulse/appium-ver-171-setup-mac-os-sierra-ios-real-device-suraj-salunkhe
   - Signing - https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md
   
   **When signing profile expires**
@@ -24,6 +24,18 @@ Environment:
    - Terminal:
       - cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent    
       - xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=<udid>' test
+  
+### **Appium**
+- Set Up: https://medium.com/@abrisad_it/setting-up-appium-with-java-on-os-x-83b4b59f1cfc
+- Import pom.xml file 
+   - will import Maven Dependencies necessary
+- Right click project > Build Path > Configure Build Path ...
+    - > Import JUnit5 or the required JUnit library
+    - > Referenced Libraries
+      - hi
+
+
+  
   
   
 

@@ -55,7 +55,8 @@ Environment:
   - How to Retrieve bundleId 
      - Self-Made Application: https://pspdfkit.com/guides/ios/current/faq/finding-the-app-bundle-id/
      - App Store Application: https://offcornerdev.com/bundleid.html
-
+  - Create and Run Appium Test with Maven
+      - https://stackoverflow.com/questions/24919159/how-to-create-in-eclipse-and-run-your-appium-test-on-the-ios-device-not-emulato
 
 
   

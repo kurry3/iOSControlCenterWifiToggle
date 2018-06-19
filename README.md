@@ -24,7 +24,7 @@ Environment:
    - Terminal:
       - cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent    
       - xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=<udid>' test
-        - How to retrieveUDID of iPhone
+        - How to retrieve UDID of iPhone
           1. Connect phone and launch iTunes
           2. Phone > Summary > click information below Phone Number until the UDID is displayed 
   
@@ -50,6 +50,11 @@ Environment:
           "bundleId": " "
          }
       ```
+    4. Start Session
+    
+  - How to Retrieve bundleId 
+     - Self-Made Application: https://pspdfkit.com/guides/ios/current/faq/finding-the-app-bundle-id/
+     - App Store Application: https://offcornerdev.com/bundleid.html
 
 
 

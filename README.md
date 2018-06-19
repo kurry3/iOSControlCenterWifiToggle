@@ -1,10 +1,10 @@
 # iPhoneToggle
 Environment: 
-- Appium: 6.0+ , Appium Desktop: 1.8+
-- Selenium: 3.12+
-- JUnit: 5.2+, Maven:4.0+
-- Eclipse: 4.7+ , Java: 6.0+
-- XCode: 9.4+
+- Appium: 6.0 , Appium Desktop: 1.8
+- Selenium: 3.12
+- JUnit: 5.2, Maven:4.0
+- Eclipse: 4., Java: 6.0
+- XCode: 9.4
 
 
 ## **Installing Appium + WebDriverAgent for real device testing**

@@ -7,8 +7,8 @@ Environment:
 - XCode: latest
 
 
-##Installing Appium + WebDriverAgent for real device testing
-###XCode WebDriverAgent
+## **Installing Appium + WebDriverAgent for real device testing**
+**XCode WebDriverAgent**
   - Appium Set Up: https://www.linkedin.com/pulse/appium-ver-171-setup-mac-os-sierra-ios-real-device-suraj-salunkhe
   - Signing - https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md
   

@@ -12,8 +12,9 @@ Environment:
   - Appium Set Up: https://www.linkedin.com/pulse/appium-ver-171-setup-mac-os-sierra-ios-real-device-suraj-salunkhe
   - Signing - https://github.com/appium/appium-xcuitest-driver/blob/master/docs/real-device-config.md
   
-  **-When signing profile expires**
-  - Open WebDriverAgent.xcode from directory /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent
+  **When signing profile expires**
+  - Open WebDriverAgent.xcode from directory:
+     - /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent
   - Change the **Bundle Identifier** for all targets found in **General** and **Build Settings**. Personally, I used:
     - com.iPhone.TestAutomation for WebDriverAgentLib and WebDriverAgentRunner
     - com.iPhone.TestAutomation.IntegrationTests for the IntegrationTests
@@ -21,8 +22,8 @@ Environment:
    - Select your account for signing found in **General**
     - Signing certificate expires in 7 days. So in 7 days, you will have to repeat the steps above and reinstall WebDriverAgent onto your device.
    - Terminal:
-    - cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent    
-    - xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=<udid>' test
+      - cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent    
+      - xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=<udid>' test
   
   
 

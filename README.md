@@ -51,7 +51,7 @@ Environment:
       ```
     4. Start Session
     
-  **- How to Retrieve bundleId **
+  **- How to Retrieve bundleId**
      - Self-Made Application: https://pspdfkit.com/guides/ios/current/faq/finding-the-app-bundle-id/
      - App Store Application: https://offcornerdev.com/bundleid.html
   **- Create and Run Appium Test with Maven**

@@ -1,7 +1,8 @@
 # iPhoneToggle
 
 About: 
-  - JUnit/Maven test that uses Appium to interact with the GUI of a real iPhone and display the control center to toggle the wifi for testing purposes <br\>
+  - JUnit/Maven test that uses Appium to interact with the GUI of a real iPhone and display the control center to toggle the wifi for testing purposes
+  
 Environment: 
 - Appium: 6.0 , Appium Desktop: 1.8
 - Selenium: 3.12

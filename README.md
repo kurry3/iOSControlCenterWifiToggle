@@ -24,15 +24,33 @@ Environment:
    - Terminal:
       - cd /Applications/Appium.app/Contents/Resources/app/node_modules/appium/node_modules/appium-xcuitest-driver/WebDriverAgent    
       - xcodebuild -project WebDriverAgent.xcodeproj -scheme WebDriverAgentRunner -destination 'id=<udid>' test
+        - How to retrieveUDID of iPhone
+          1. Connect phone and launch iTunes
+          2. Phone > Summary > click information below Phone Number until the UDID is displayed 
   
 ### **Appium**
-- Set Up: https://medium.com/@abrisad_it/setting-up-appium-with-java-on-os-x-83b4b59f1cfc
-- Import pom.xml file 
-   - will import Maven Dependencies necessary
-- Right click project > Build Path > Configure Build Path ...
-    - > Import JUnit5 or the required JUnit library
-    - > Referenced Libraries
-      - hi
+  - Set Up 1: https://medium.com/@abrisad_it/setting-up-appium-with-java-on-os-x-83b4b59f1cfc
+  - Set Up 2: http://www.automationtestinghub.com/appium-project-in-eclipse/
+  - Right click project > Build Path > Configure Build Path > Add Library > Junit
+  - Import pom.xml file 
+      - will import Maven Dependencies necessary
+  - About IPhoneWifi.java file 
+  - Appium Server: http://www.automationtestinghub.com/appium-desktop/
+  - How to Launch Appium Desktop Inspector
+    1. Click the magnifying glass in the top right of Appium desktop
+    2. Create a Custom Server
+    3. Edit Desired Capabilities: 
+      ```
+      { 
+          "platformName": "iOS",
+          "platformVersion": "11.4",
+          "deviceName" : " ",
+          "automationName": "XCUITest",
+          "udid": " ",
+          "bundleId": " "
+         }
+      ```
+
 
 
   

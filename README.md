@@ -35,7 +35,7 @@ Environment:
   - Import pom.xml file 
       - will import Maven Dependencies necessary
   - Appium Server: http://www.automationtestinghub.com/appium-desktop/
-  **- How to Launch Appium Desktop Inspector**
+  - **How to Launch Appium Desktop Inspector**
     1. Click the magnifying glass in the top right of Appium desktop
     2. Create a Custom Server
     3. Edit Desired Capabilities: 
@@ -51,10 +51,10 @@ Environment:
       ```
     4. Start Session
     
-  **- How to Retrieve bundleId**
+  - **How to Retrieve bundleId**
      - Self-Made Application: https://pspdfkit.com/guides/ios/current/faq/finding-the-app-bundle-id/
      - App Store Application: https://offcornerdev.com/bundleid.html
-  **- Create and Run Appium Test with Maven**
+  - **Create and Run Appium Test with Maven**
       - https://stackoverflow.com/questions/24919159/how-to-create-in-eclipse-and-run-your-appium-test-on-the-ios-device-not-emulato
 
 

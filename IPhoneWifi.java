@@ -1,10 +1,14 @@
 package test.java.IPhoneWifi;
 
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 //import org.testng.annotations.*;
 import org.junit.jupiter.api.*;
@@ -28,25 +32,25 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.*;
 import io.appium.java_client.TouchAction;
 
-
-
-
 public class IPhoneWifi{
-
+	
+	
+	
 	private static AppiumDriver<MobileElement> driver;
 	
 	@BeforeAll
 	public static void ixchariotLaunch() throws Exception {
+		System.setProperty("webdriver.http.factory", "apache");
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setCapability("platformName", "iOS");
 		cap.setCapability("platformVersion", "11.3");
 		cap.setCapability("deviceName", "RF's iPhone");
 		cap.setCapability("automationName", "XCUITest");
-		cap.setCapability("udid", "0a1364a47e9b044d605558130817ad53a9b5208c");
+		cap.setCapability("udid", "f2164f6fed275ba15386c7eebc99b2926ad398c6");
 		cap.setCapability("bundleId", "com.yourcompany.Endpoint");
 		
 		try {
-			driver = new IOSDriver<MobileElement>(new URL("http://0.0.0.0:4725/wd/hub"),cap);
+			driver = new IOSDriver<MobileElement>(new URL("http://0.0.0.0:4727/wd/hub"),cap);
 		}catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
@@ -56,15 +60,15 @@ public class IPhoneWifi{
 	
     @SuppressWarnings("rawtypes")
 	@Test
-    void myFirstTest() {
+    void myFirstTest() throws InterruptedException {
 		System.out.println("Test Started");
-		//driver.findElement(By.name("About")).click();
 		
 		Dimension d = driver.manage().window().getSize();
 		int height = d.getHeight();
 		int width = d.getWidth();
 		System.out.println(height);
 		System.out.println(width);
+
 		/*JavascriptExecutor js = (JavascriptExecutor) driver;
 		HashMap<String, Object> swipeObj = new HashMap<>();
 		swipeObj.put("fromY", height);
@@ -82,11 +86,14 @@ public class IPhoneWifi{
 		scrollParams.put("direction","down");
 		js.executeScript("mobile:scroll", scrollParams);*/
 		
-		
 		TouchAction touchAction = new TouchAction(driver);
 		touchAction.press(new PointOption().withCoordinates(width/2, height)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).moveTo(new PointOption().withCoordinates(width/2, -height)).release().perform();
-		//driver.getinstance().findElement(By.id("Wi-Fi"));
-		
+
+		try {
+			Thread.sleep(2*1000);
+		}catch(InterruptedException e){
+			e.printStackTrace();
+		}
 		
 		/* if (driver.getInstance()findElement(By.id("WiFi")).isEnabled()){
 		 * 	click("WiFi", Attribute.NAME);
@@ -96,42 +103,31 @@ public class IPhoneWifi{
 		 * }
 		 * 
 		 * */
-		//System.out.println("Scrolling finished");
-		try {
-			Thread.sleep(2*1000);
-		}catch(InterruptedException e){
-			e.printStackTrace();
-		}
-		//touchAction.tap(PointOption.point(341, 630)).perform();
-		//driver.findElementByAccessibilityId("Wi-fi");
 		
 		int count = 0;
-		do {
-
-			//TouchAction tapWifi = new TouchAction(driver);
-			touchAction.tap(PointOption.point(70, 340)).perform();
+		/*do {
 			count = count + 1;
-			try {
-				Thread.sleep(5*1000);
-			}catch(InterruptedException e){
-				e.printStackTrace();
-			}
-		}while (count <= 50);
-		
-		//touchAction.tap(PointOption.point(70, 340)).perform();		
+			System.out.println(count);
+			driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+			
+		}while (count <= 10);*/
+		do {
+			driver.findElementByAccessibilityId("wifi-button").click();
+			count = count + 1;
+			//touchAction.waitAction(WaitOptions.waitOptions(Duration.ofMillis(5*1000)));
+			Thread.sleep(5*1000);
+		}while (count <= 5);
 		
 		
     }
-    
-	
-
+   
 	@AfterAll
 	public static void tearDown() throws Exception{
-		try {
+		/*try {
 			Thread.sleep(10*1000);
 		}catch(InterruptedException e) {
 			e.printStackTrace();
-		}
+		}*/
 		driver.quit();
 	}
 

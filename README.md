@@ -4,7 +4,8 @@ About:
   - JUnit/Maven test that uses Appium to interact with the GUI of a real iPhone and display the control center to toggle the wifi for testing purposes
   
 Environment: 
-- Appium: 6.0 , Appium Desktop: 1.8
+- Appium: 5.0.4 , Appium Desktop: 1.8
+  - !!!: originally Appium version was 6.0.0 but Thread.sleep results in the error "org.openqa.selenium.WebDriverException: java.net.SocketException: Connection reset". Issue does not resurface by downgrading Appium. 
 - Selenium: 3.12
 - JUnit: 5.2, Maven:4.0
 - Eclipse: 4., Java: 6.0

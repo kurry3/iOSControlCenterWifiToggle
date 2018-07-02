@@ -58,7 +58,7 @@ Environment:
   - **How to Retrieve bundleId for iOS**
      - Self-Made Application: https://pspdfkit.com/guides/ios/current/faq/finding-the-app-bundle-id/
      - App Store Application: https://offcornerdev.com/bundleid.html
-  -**How to Retrieve capabilities information for Android**
+  - **How to Retrieve capabilities information for Android**
      -udid:
       - run command: **adb devices**
      -appPackage & appActivity

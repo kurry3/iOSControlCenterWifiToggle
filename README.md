@@ -30,7 +30,9 @@ Environment:
           1. Connect phone and launch iTunes
           2. Phone > Summary > click information below Phone Number until the UDID is displayed
           OR
-          1. Connect phone to 
+          1. Connect phone and run "instruments -s devices"
+      -if codesign wants to access key access in your keychain
+        -input user password and select Always Allow
   
 ### **Appium**
   - Set Up 1: https://medium.com/@abrisad_it/setting-up-appium-with-java-on-os-x-83b4b59f1cfc
